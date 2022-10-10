@@ -12,7 +12,7 @@ def user(name):
     except:
         return []
 
-
+#GET
 @app.route("/", methods=["GET"])
 def AllUsers():
     try:
@@ -21,6 +21,7 @@ def AllUsers():
     except:
         return []
 
+#POST
 @app.route("/", methods=["POST"])
 def CreateUser():
     data = request.json
@@ -34,6 +35,7 @@ def CreateUser():
 
     return dumps({"Success" : 1})
 
+#DELETE
 @app.route("/<id>", methods=["DELETE"])
 def DeleteUser(id):
 
@@ -41,7 +43,7 @@ def DeleteUser(id):
 
     return dumps({"Success" : 1})
 
-
+#GET
 @app.route("/<id>/<password>", methods=["GET"])
 def LogIn(id, password):
     try:
